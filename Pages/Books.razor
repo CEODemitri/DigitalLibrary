@@ -1,0 +1,41 @@
+@page "/books"
+@using BlazorApp.Models
+
+<PageTitle>Digital Library</PageTitle>
+
+<div class="vh-100 text-white bg-dark">
+    <h1 class="">Outspoken dreams, unleash your imagination</h1>
+
+<h3>Book List</h3>
+
+@if (books == null)
+{
+            <p><em>Loading...</em></p>
+}
+else
+{
+            <ul>
+        @foreach (var book in books)
+        {
+                            <li>
+                                <strong>@book.Title</strong> by @book.Author (@book.Year)
+                            </li>
+        }
+            </ul>
+}
+
+@code {
+    private List<Book> books;
+
+    protected override void OnInitialized()
+    {
+        // Simulating a list of books (figure out API or database)
+        books = new List<Book>
+        {
+            new Book { Title = "The Great Gatsby", Author = "F. Scott Fitzgerald", Year = 1925 },
+            new Book { Title = "To Kill a Mockingbird", Author = "Harper Lee", Year = 1960 },
+            new Book { Title = "1984", Author = "George Orwell", Year = 1949 }
+        };
+    }
+}
+</div>
