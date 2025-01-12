@@ -4,6 +4,25 @@ html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+/* my own */
+ul {
+    width: 80vw;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    margin: auto;
+
+    li {
+        width: 30%;
+    }
+}
+
+.card {
+    border: none;
+}
+/* my own */
+
 h1:focus {
     outline: none;
 }

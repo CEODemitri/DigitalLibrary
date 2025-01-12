@@ -14,14 +14,22 @@
 }
 else
 {
-            <ul>
+    <ul class="text-black">
         @foreach (var book in books)
         {
-                            <li>
-                                <strong>@book.Title</strong> by @book.Author (@book.Year)
-                            </li>
+            <li>
+                <div class="card">
+                <img src="@book.Url" class="card-img-top" alt="@book.Title cover" height="400">
+                <div class="card-body">
+                    <h4 class="card-title">@book.Title</h4>
+                    <h5>@book.Author (@book.Year)</h5>
+                    <p class="card-text fw-light">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+            </li>
         }
-            </ul>
+    </ul>
 }
 
 @code {
@@ -32,9 +40,9 @@ else
         // Simulating a list of books (figure out API or database)
         books = new List<Book>
         {
-            new Book { Title = "The Great Gatsby", Author = "F. Scott Fitzgerald", Year = 1925 },
-            new Book { Title = "To Kill a Mockingbird", Author = "Harper Lee", Year = 1960 },
-            new Book { Title = "1984", Author = "George Orwell", Year = 1949 }
+            new Book { Title = "The Great Gatsby", Author = "F. Scott Fitzgerald", Year = 1925, Url = "https://m.media-amazon.com/images/I/81QuEGw8VPL.jpg" },
+            new Book { Title = "To Kill a Mockingbird", Author = "Harper Lee", Year = 1960, Url = "https://m.media-amazon.com/images/I/81aY1lxk+9L.jpg" },
+            new Book { Title = "1984", Author = "George Orwell", Year = 1949, Url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSieH3L1WsbphfalMi0zJ144RQakkzOMKKYEQ&s" }
         };
     }
 }
